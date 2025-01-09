@@ -54,7 +54,9 @@ if __name__ == '__main__':
         print(sp.pretty(sp.simplify(F7)))
 
     # Fazendo o calculo numerico, devido a eficiência
-    L1, L2, L3, L4 = 1, 1, 1, 1 # links fixos
+    L1, L2, L3, L4 = 300/100, 328/100, 276.5/100, 171.7/100 # links fixos
+    
+
     TH1, TH2, TH3 = np.deg2rad(0), np.deg2rad(0), np.deg2rad(0)
     TH4, TH5, TH6, TH7 = np.deg2rad(0), np.deg2rad(0), np.deg2rad(0), np.deg2rad(0)
 
