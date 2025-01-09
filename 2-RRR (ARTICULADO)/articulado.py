@@ -12,13 +12,15 @@ if __name__ == '__main__':
     # Robô ARTICULADO:
     # |========================================|
     # | Ai | d       | theta     | a   | alpha |
+    # |----|---------|-----------|-----|-------
     # | A1 | L1      | th1*      | 0   | -90   |
     # | A2 | 0       | th2*      | L2  | 0     |
     # | A3 | 0       | th3*      | L3  | 0     |
     # |========================================|
 
-    # Definindo os parâmetros do robô:
+    
     if(input("Deseja usar a matriz de transformação homogênea genérica? (s/n): ") == 's'):
+        # Definindo os parâmetros do robô:
         # Joint variables
         th1, th2, th3, l1, l2, l3 = sp.symbols('th1 th2 th3 l1 l2 l3', real=True)
 
