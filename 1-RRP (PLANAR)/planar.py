@@ -15,14 +15,14 @@ if __name__ == '__main__':
     # |----|---------|-----------|-----|-------|
     # | 1  | 0       | th1*      | L1  | 0     |
     # | 2  | 0       | 90 + th2* | 0   | 90    |
-    # | 3  | L2 + L3*| 0         | 0   | 0     |
+    # | 3  | L2 + d3*| 0         | 0   | 0     |
     # |========================================|
 
     # Definindo os parâmetros do robô:
 
     if(input("Deseja usar a matriz de transformação homogênea genérica? (s/n): ") == 's'):
         # Joint variables
-        th1, th2, l1, l2, l3 = sp.symbols('th1 th2 l1 l2 l3', real=True)
+        th1, th2, l1, l2, d3 = sp.symbols('th1 th2 l1 l2 d3', real=True)
         
         # Matriz de transformação homogênea
         F0 = np.eye(4)
@@ -41,13 +41,13 @@ if __name__ == '__main__':
 
     # Fazendo o calculo numerico, devido a eficiência
     L1, L2= 1, 1 # links fixos
-    L3 = 1 # link variável
+    D3 = 1 # link variável
     TH1, TH2 = np.deg2rad(0), np.deg2rad(0)
     
     f0 = np.eye(4)
     f1 = f0 @ numeric_DH(0, TH1, L1, 0)
     f2 = f1 @ numeric_DH(0, np.deg2rad(90)+TH2, 0, np.deg2rad(90))
-    f3 = f2 @ numeric_DH(L2+L3, 0, 0, 0)
+    f3 = f2 @ numeric_DH(L2+D3, 0, 0, 0)
 
     frames = [f0, f1, f2, f3]
 
@@ -61,13 +61,13 @@ if __name__ == '__main__':
     plt.figure(2)
     fig2 = plt.axes(projection='3d')
 
-    L3 = 2 # link variável
+    D3 = 2 # link variável
     TH1, TH2 = np.deg2rad(90), np.deg2rad(-90)
 
     f0 = np.eye(4)
     f1 = f0 @ numeric_DH(0, TH1, L1, 0)
     f2 = f1 @ numeric_DH(0, np.deg2rad(90)+TH2, 0, np.deg2rad(90))
-    f3 = f2 @ numeric_DH(L2+L3, 0, 0, 0)
+    f3 = f2 @ numeric_DH(L2+D3, 0, 0, 0)
 
     frames = [f0, f1, f2, f3]
 
