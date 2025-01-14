@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
     #Posicao aleatoria
     D3 = 1 # deslocamentos
-    TH1, TH2 = np.deg2rad(40), np.deg2rad(45) # angulos
+    TH1, TH2 = np.deg2rad(45), np.deg2rad(45) # angulos
 
     f0 = np.eye(4)
     f1 = f0 @ numeric_DH(L1Z, TH1, L1X, 0)

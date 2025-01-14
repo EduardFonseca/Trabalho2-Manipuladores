@@ -3,6 +3,8 @@ from auxiliar_plots import *
 import matplotlib.pyplot as plt
 import sympy as sp
 
+# Codigo relativo a testes das funcoes nao e necessario para o entendimento do codigo
+# nem mesmo sua referencia no relatorio
 
 
 if __name__ == '__main__':
