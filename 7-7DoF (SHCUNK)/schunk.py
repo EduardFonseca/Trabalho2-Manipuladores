@@ -30,25 +30,25 @@ if __name__ == '__main__':
         F0 = np.eye(4)
 
         A1 = A.subs([(d, l1), (theta, th1), (a, 0), (alpha, np.deg2rad(90))])
-        F1 = sp.simplify(F0 @ A1)
+        F1 = F0 @ A1
 
         A2 = A.subs([(d, 0), (theta, th2), (a, 0), (alpha, np.deg2rad(-90))])
-        F2 = sp.simplify(F1 @ A2)
+        F2 = F1 @ A2
 
         A3 = A.subs([(d, l2), (theta, th3), (a, 0), (alpha, np.deg2rad(90))])
-        F3 = sp.simplify(F2 @ A3)
+        F3 = F2 @ A3
 
         A4 = A.subs([(d, 0), (theta, th4), (a, 0), (alpha, np.deg2rad(-90))])
-        F4 = sp.simplify(F3 @ A4)
+        F4 = F3 @ A4
 
         A5 = A.subs([(d, l3), (theta, th5), (a, 0), (alpha, np.deg2rad(90))])
-        F5 = sp.simplify(F4 @ A5)
+        F5 = F4 @ A5
 
         A6 = A.subs([(d, 0), (theta, th6), (a, 0), (alpha, np.deg2rad(-90))])
-        F6 = sp.simplify(F5 @ A6)
+        F6 = F5 @ A6
 
         A7 = A.subs([(d, l4), (theta, th7), (a, 0), (alpha, 0)])
-        F7 = sp.simplify(F6 @ A7)
+        F7 = F6 @ A7
 
         print(sp.latex(sp.simplify(F7)))
         print(sp.pretty(sp.simplify(F7)))

@@ -33,7 +33,7 @@ if __name__ == '__main__':
         A2 = A.subs([(d, 0), (theta, np.deg2rad(90)+th2), (a, 0), (alpha, np.deg2rad(90))])
         F2 = sp.simplify(F1 @ A2)
 
-        A3 = A.subs([(d, l2+l3), (theta, 0), (a, 0), (alpha, 0)])
+        A3 = A.subs([(d, l2+d3), (theta, 0), (a, 0), (alpha, 0)])
         F3 = sp.simplify(F2 @ A3)
 
         print(sp.latex(sp.simplify(F3)))
